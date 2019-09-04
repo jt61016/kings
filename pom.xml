@@ -28,7 +28,10 @@
         <java.version>1.8</java.version>
 
         <springboot.version>2.1.3.RELEASE</springboot.version>
+        <dubbo.version>2.7.3</dubbo.version>
         <lombok.version>1.12.2</lombok.version>
+
+        <userx.version>1.0-SNAPSHOT</userx.version>
     </properties>
 
     <dependencyManagement>
@@ -50,10 +53,49 @@
                 <version>${springboot.version}</version>
             </dependency>
 
+            <!-- dubbo -->
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo</artifactId>
+                <version>${dubbo.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>spring-context</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>slf4j-log4j12</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-dependencies-zookeeper</artifactId>
+                <version>${dubbo.version}</version>
+                <type>pom</type>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>spring</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>slf4j-log4j12</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.demo</groupId>
+                <artifactId>userx-facade-api</artifactId>
+                <version>${userx.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
