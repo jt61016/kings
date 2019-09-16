@@ -1,5 +1,6 @@
 package com.demo.kings.web.controller;
 
+import com.demo.kings.common.dto.Response;
 import com.demo.userx.facade.HelloFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,13 +18,13 @@ public class ToolsController {
     HelloFacade helloFacade;
 
     @GetMapping("ping")
-    public String ping() {
-        return "ok";
+    public Response<String> ping() {
+        return Response.ok("ok");
     }
 
     @GetMapping("testDubbo")
-    public String testDubbo() {
-        String rpcRet = helloFacade.sayHello();
+    public Response<String> testDubbo() {
+        Response rpcRet = helloFacade.sayHello();
         return rpcRet;
     }
 }

@@ -22,5 +22,11 @@
             <groupId>com.demo</groupId>
             <artifactId>userx-facade-api</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.demo</groupId>
+            <artifactId>kings-common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 </project>
