@@ -28,7 +28,7 @@
         <java.version>1.8</java.version>
 
         <springboot.version>2.1.3.RELEASE</springboot.version>
-        <dubbo.version>2.7.3</dubbo.version>
+        <dubbo.version>2.7.15</dubbo.version>
         <lombok.version>1.12.2</lombok.version>
 
         <userx.version>1.0.0-SNAPSHOT</userx.version>
